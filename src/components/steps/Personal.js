@@ -9,8 +9,12 @@ export const Personal = ({
   setMiddleName,
   lastName,
   setLastName,
-  navigation,
+  email,
+  website,
+  contactNo,
+  navigation
 }) => {
+  const { go } = navigation;
   const [condi, setCondi] = useState(false);
   const [firstNameVal, setFirstNameVal] = useState(false);
   const [middleNameVal, setMiddleNameVal] = useState(false);
@@ -42,8 +46,12 @@ export const Personal = ({
       middleName.length &&
       lastName.length
     ) {
-      setCondi(false);
-      navigation.next();
+      if (email.length && contactNo.length && website.length) {
+        go("review");
+      } else {
+        setCondi(false);
+        navigation.next();
+      }
     } else {
       setCondi(true);
     }

@@ -11,7 +11,7 @@ const steps = [
   { id: "contact" },
   { id: "profilepicture" },
   { id: "review" },
-  { id: "submit" },
+  { id: "submit" }
 ];
 
 const MultiStepForm = () => {
@@ -24,7 +24,7 @@ const MultiStepForm = () => {
   const [profileImg, setProfileImg] = useState("");
   const { step, navigation } = useStep({
     steps,
-    initialStep: 0,
+    initialStep: 0
   });
   const props = {
     firstName,
@@ -41,7 +41,7 @@ const MultiStepForm = () => {
     setWebsite,
     navigation,
     profileImg,
-    setProfileImg,
+    setProfileImg
   };
 
   switch (step.id) {

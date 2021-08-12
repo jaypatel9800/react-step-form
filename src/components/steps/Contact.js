@@ -10,8 +10,10 @@ const Contact = ({
   setContactNo,
   website,
   setWebsite,
-  navigation,
+  profileImg,
+  navigation
 }) => {
+  const { go } = navigation;
   const [condi, setCondi] = useState(false);
   const [emailVal, setEmailVal] = useState(false);
   const [websiteVal, setwebsiteVal] = useState(false);
@@ -45,8 +47,12 @@ const Contact = ({
       !emailVal &&
       !websiteVal
     ) {
-      setCondi(false);
-      navigation.next();
+      if (profileImg.length) {
+        go("review");
+      } else {
+        setCondi(false);
+        navigation.next();
+      }
     } else {
       setCondi(true);
     }
