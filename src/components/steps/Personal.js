@@ -12,6 +12,7 @@ export const Personal = ({
   email,
   website,
   contactNo,
+  profileImg,
   navigation
 }) => {
   const { go } = navigation;
@@ -47,7 +48,11 @@ export const Personal = ({
       lastName.length
     ) {
       if (email.length && contactNo.length && website.length) {
-        go("review");
+        if (profileImg.length) {
+          go("review");
+        } else {
+          go("profilepicture");
+        }
       } else {
         setCondi(false);
         navigation.next();
