@@ -63,7 +63,7 @@ export const Personal = ({
   };
   return (
     <Container maxWidth="xs">
-      <h3>1. Personal Information</h3>
+      <h3>1. Information</h3>
       <form>
         <TextField
           label="First Name"
